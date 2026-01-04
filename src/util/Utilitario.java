@@ -73,4 +73,17 @@ public class Utilitario {
         System.out.println("6.Mostrar vehiculos por marca");
         System.out.println("7.Salir");
     }
+
+    public int matricular(String cedula, String modelo, int anio){
+        for(Vehiculo v: vehiculos){
+            if(v.getMarca().equalsIgnoreCase(modelo)){
+                if(v.getAnio()==anio){
+                    if(v.getPropietario().getCedula().equals(cedula)){
+                        return v.matricular();
+                    }
+                }
+            }
+        }
+        return 0;
+    }
 }

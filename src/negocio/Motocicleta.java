@@ -1,6 +1,9 @@
 package negocio;
 
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 public class Motocicleta extends Vehiculo{
     private int altura;
     private String encendido;
@@ -32,5 +35,19 @@ public class Motocicleta extends Vehiculo{
         return super.toString()+
                 "altura: " + altura +
                 "\nencendido: " + encendido;
+    }
+
+    @Override
+    public int matricular(){
+        GregorianCalendar gc = new GregorianCalendar();
+        int anio = gc.get(Calendar.YEAR);
+        int antiguedad = anio - getAnio();
+        int calculo = 400 - antiguedad * 20;
+        if(calculo<20){
+            return calculo;
+
+        }else {
+            return 20;
+        }
     }
 }

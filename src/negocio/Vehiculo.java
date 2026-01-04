@@ -1,6 +1,6 @@
 package negocio;
 
-public class Vehiculo {
+public abstract class Vehiculo {
     private String marca, modelo;
     private int anio;
 
@@ -53,4 +53,6 @@ public class Vehiculo {
                         "\nanio: " + anio +
                         "\npropietario: " + propietario;
     }
+
+    public abstract int matricular();
 }
